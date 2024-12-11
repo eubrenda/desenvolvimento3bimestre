@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Cursos</title>
+</head>
+<body>
+    <h1>Lista de Cursos</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for curso in cursos %}
+                <tr>
+                    <td>{{ curso.nome }}</td>
+                    <td>
+                        <a href="{% url 'editar_curso' curso.id %}">Editar</a>
+                        <a href="{% url 'excluir_curso' curso.id %}">Excluir</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url 'criar_curso' %}">Criar Novo Curso</a>
+    <br>
+    <a href="{% url 'home' %}">Voltar para a Tela Inicial</a> <!-- Botão de Voltar -->
+</body>
+</html>

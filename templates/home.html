@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Inicial</title>
+</head>
+<body>
+    <h1>Bem-vindo ao Sistema</h1>
+    <p>Escolha uma opção:</p>
+    <ul>
+        <a href="{% url 'listar_cursos' %}">Gerenciar Cursos</a>
+        <a href="{% url 'listar_estudantes' %}">Gerenciar Alunos</a>
+    </ul>
+</body>
+</html>

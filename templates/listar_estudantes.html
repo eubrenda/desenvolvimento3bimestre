@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Estudantes</title>
+</head>
+<body>
+    <h1>Lista de Estudantes</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for estudante in estudantes %}
+                <tr>
+                    <td>{{ estudante.nome }}</td>
+                    <td>
+                        <a href="{% url 'editar_estudante' estudante.id %}">Editar</a>
+                        <a href="{% url 'excluir_estudante' estudante.id %}">Excluir</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url 'criar_estudante' %}">Criar Novo Estudante</a>
+    <br>
+    <a href="{% url 'home' %}">Voltar para a Tela Inicial</a> <!-- Botão de Voltar -->
+</body>
+</html>
